@@ -117,7 +117,15 @@
     background-image: linear-gradient(rgba(11, 11, 11, 0.5),
         rgba(11, 11, 11, 0.5)),
       url(../images/pic-mobile.webp);
+    background-size: 320px 364px;
+    /* Set the dimensions for the background image */
+    background-position: top left;
+    /* Adjust the position */
     height: 364px;
+    top: -0px;
+    /* Positioning the container */
+    opacity: 1;
+    /* Ensure opacity is set to 1 */
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -147,7 +155,8 @@
     top: -90px;
     left: -107px;
     gap: 0px;
-    opacity: 0px;
+    opacity: 0;
+    /* Hide the quarter circle */
   }
 
   /* Logo Settings for Mobile */
@@ -157,6 +166,7 @@
     top: -90px;
     left: -107px;
     gap: 0px;
-    opacity: 0px;
+    opacity: 0;
+    /* Hide the logo */
   }
 }
