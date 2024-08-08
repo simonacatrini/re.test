@@ -31,17 +31,24 @@
   border-bottom-right-radius: 229px;
   position: absolute;
   top: 0;
+  left: 0;
+  z-index: 1;
+  /* Asigură-te că acest element este peste fundal */
 }
 
 .logo img {
   position: absolute;
   top: 41px;
   left: 16px;
+  z-index: 2;
+  /* Asigură-te că logo-ul este deasupra altor elemente */
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   max-width: 80rem;
   background-size: cover;
@@ -50,6 +57,7 @@
       rgba(11, 11, 11, 0.5)),
     url(../images/pic.webp);
   height: 446px;
+  position: relative;
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -66,17 +74,19 @@
 .page-title {
   display: flex;
   align-items: center;
+  justify-content: center;
   text-transform: uppercase;
   color: var(--main-text-color);
   font-weight: 900;
   font-size: 50px;
   max-width: 608px;
-  margin: 0 auto;
+  margin: 0;
   text-align: center;
+  z-index: 2;
+  /* Asigură-te că textul este deasupra fundalului */
   padding-top: 40px;
 }
 
-/* Modificări pentru ecrane sub 800px */
 @media screen and (max-width: 800px) {
   .container {
     background-image: linear-gradient(rgba(11, 11, 11, 0.5),
@@ -113,7 +123,6 @@
   }
 }
 
-/* Modificări pentru ecrane sub 480px (mobil) */
 @media screen and (max-width: 480px) {
   .container {
     background-image: linear-gradient(rgba(11, 11, 11, 0.5),
@@ -121,7 +130,6 @@
       url(../images/pic-mobile.webp);
     height: 320px;
     padding: 20px;
-    /* Adaugă un padding pentru a evita suprapunerea */
   }
 
   @media (max-device-pixel-ratio: 2),
@@ -136,10 +144,11 @@
   }
 
   .page-title {
-    font-size: 20px;
+    font-size: 18px;
     /* Diminuează fontul pentru titlu */
-    max-width: 250px;
-    padding-top: 60px;
+    max-width: 275px;
+    padding-top: 20px;
+    /* Ajustează padding-ul pentru a centra textul */
   }
 
   .quartercircle {
