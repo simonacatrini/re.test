@@ -76,7 +76,6 @@
   padding-top: 40px;
 }
 
-/* Modificări pentru ecrane sub 800px */
 @media screen and (max-width: 800px) {
   .container {
     background-image: linear-gradient(rgba(11, 11, 11, 0.5),
@@ -85,10 +84,10 @@
     height: 364px;
   }
 
-  @media (max-device-pixel-ratio: 2),
-  (-webkit-max-device-pixel-ratio: 2),
-  (max-resolution: 192dpi),
-  (max-resolution: 2dppx) {
+  @media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
     .container {
       background-image: linear-gradient(rgba(11, 11, 11, 0.5),
           rgba(11, 11, 11, 0.5)),
@@ -113,21 +112,18 @@
   }
 }
 
-/* Modificări pentru ecrane sub 480px (mobil) */
 @media screen and (max-width: 480px) {
   .container {
     background-image: linear-gradient(rgba(11, 11, 11, 0.5),
         rgba(11, 11, 11, 0.5)),
       url(../images/pic-mobile.webp);
-    height: 320px;
-    padding: 20px;
-    /* Adaugă un padding pentru a evita suprapunerea */
+    height: 364px;
   }
 
-  @media (max-device-pixel-ratio: 2),
-  (-webkit-max-device-pixel-ratio: 2),
-  (max-resolution: 192dpi),
-  (max-resolution: 2dppx) {
+  @media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
     .container {
       background-image: linear-gradient(rgba(11, 11, 11, 0.5),
           rgba(11, 11, 11, 0.5)),
@@ -135,25 +131,32 @@
     }
   }
 
+  /* Title Settings for Mobile */
   .page-title {
-    font-size: 20px;
-    /* Diminuează fontul pentru titlu */
-    max-width: 250px;
-    padding-top: 60px;
+    font-size: 18px;
+    max-width: 280px;
+    height: 44px;
+    padding-top: 80px;
+    margin-left: 20px;
   }
 
+  /* Quarter Circle Settings for Mobile */
   .quartercircle {
-    width: 90px;
-    height: 75px;
-    top: 0;
-    left: 0;
-    border-bottom-right-radius: 90px;
+    width: 213px;
+    height: 180px;
+    top: -90px;
+    left: -107px;
+    gap: 0px;
+    opacity: 0px;
   }
 
+  /* Logo Settings for Mobile */
   .logo img {
-    width: 50px;
-    /* Ajustează dimensiunea logo-ului */
-    top: 10px;
-    left: 10px;
+    width: 213px;
+    height: 180px;
+    top: -90px;
+    left: -107px;
+    gap: 0px;
+    opacity: 0px;
   }
 }
