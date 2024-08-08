@@ -47,8 +47,9 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-start;
+  /* Titlul va fi mai sus */
   overflow: hidden;
   max-width: 80rem;
   background-size: cover;
@@ -58,6 +59,8 @@
     url(../images/pic.webp);
   height: 446px;
   position: relative;
+  padding-top: 20px;
+  /* Adaugă un spațiu de sus */
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -84,7 +87,27 @@
   text-align: center;
   z-index: 2;
   /* Asigură-te că textul este deasupra fundalului */
-  padding-top: 40px;
+  padding-top: 20px;
+  /* Mai sus față de versiunea precedentă */
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  /* Adaugă un spațiu între titlu și barele de căutare */
+  z-index: 2;
+}
+
+.search-bar {
+  width: 80%;
+  max-width: 400px;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 @media screen and (max-width: 800px) {
@@ -121,6 +144,10 @@
     top: 23px;
     left: 26px;
   }
+
+  .search-bar {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -147,7 +174,7 @@
     font-size: 18px;
     /* Diminuează fontul pentru titlu */
     max-width: 275px;
-    padding-top: 20px;
+    padding-top: 10px;
     /* Ajustează padding-ul pentru a centra textul */
   }
 
@@ -164,5 +191,10 @@
     /* Ajustează dimensiunea logo-ului */
     top: 10px;
     left: 10px;
+  }
+
+  .search-bar {
+    font-size: 14px;
+    /* Micșorează fontul pentru barele de căutare */
   }
 }
