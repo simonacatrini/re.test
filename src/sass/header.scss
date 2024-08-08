@@ -14,7 +14,7 @@
   font-weight: normal;
   font-size: 16px;
 }
-*,
+
 .section-holder {
   max-width: 80rem;
   margin: 0 auto;
@@ -23,11 +23,9 @@
 .quartercircle {
   width: 229px;
   height: 193px;
-  background: linear-gradient(
-    231deg,
-    rgba(196, 196, 196, 0.1),
-    rgba(196, 196, 196, 0.1)
-  );
+  background: linear-gradient(231deg,
+      rgba(196, 196, 196, 0.1),
+      rgba(196, 196, 196, 0.1));
   backdrop-filter: blur(10px);
   border-bottom-right-radius: 229px;
   position: absolute;
@@ -44,26 +42,22 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  max-width: 80rem;
+  max-width: 100%;
   background-size: cover;
   background-position: center center;
-  background-image: linear-gradient(
-      rgba(11, 11, 11, 0.5),
-      rgba(11, 11, 11, 0.5)
-    ),
+  background-image: linear-gradient(rgba(11, 11, 11, 0.5),
+      rgba(11, 11, 11, 0.5)),
     url(../images/pic.webp);
   height: 446px;
 }
 
 @media (min-device-pixel-ratio: 2),
-  (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
   .container {
-    background-image: linear-gradient(
-        rgba(11, 11, 11, 0.5),
-        rgba(11, 11, 11, 0.5)
-      ),
+    background-image: linear-gradient(rgba(11, 11, 11, 0.5),
+        rgba(11, 11, 11, 0.5)),
       url(../images/pic@2x.webp);
   }
 }
@@ -83,23 +77,19 @@
 
 @media screen and (max-width: 800px) {
   .container {
-    background-image: linear-gradient(
-        rgba(11, 11, 11, 0.5),
-        rgba(11, 11, 11, 0.5)
-      ),
+    background-image: linear-gradient(rgba(11, 11, 11, 0.5),
+        rgba(11, 11, 11, 0.5)),
       url(../images/pic-tablet.webp);
     height: 364px;
   }
 
   @media (max-device-pixel-ratio: 2),
-    (-webkit-max-device-pixel-ratio: 2),
-    (max-resolution: 192dpi),
-    (max-resolution: 2dppx) {
+  (-webkit-max-device-pixel-ratio: 2),
+  (max-resolution: 192dpi),
+  (max-resolution: 2dppx) {
     .container {
-      background-image: linear-gradient(
-          rgba(11, 11, 11, 0.5),
-          rgba(11, 11, 11, 0.5)
-        ),
+      background-image: linear-gradient(rgba(11, 11, 11, 0.5),
+          rgba(11, 11, 11, 0.5)),
         url(../images/pic-tablet@2x.webp);
     }
   }
@@ -123,26 +113,23 @@
 
 @media screen and (max-width: 480px) {
   .container {
-    background-image: linear-gradient(
-        rgba(11, 11, 11, 0.5),
-        rgba(11, 11, 11, 0.5)
-      ),
+    background-image: linear-gradient(rgba(11, 11, 11, 0.5),
+        rgba(11, 11, 11, 0.5)),
       url(../images/pic-mobile.webp);
     height: 364px;
   }
 
   @media (max-device-pixel-ratio: 2),
-    (-webkit-max-device-pixel-ratio: 2),
-    (max-resolution: 192dpi),
-    (max-resolution: 2dppx) {
+  (-webkit-max-device-pixel-ratio: 2),
+  (max-resolution: 192dpi),
+  (max-resolution: 2dppx) {
     .container {
-      background-image: linear-gradient(
-          rgba(11, 11, 11, 0.5),
-          rgba(11, 11, 11, 0.5)
-        ),
+      background-image: linear-gradient(rgba(11, 11, 11, 0.5),
+          rgba(11, 11, 11, 0.5)),
         url(../images/pic-mobile@2x.webp);
     }
   }
+
   .page-title {
     font-size: 18px;
     max-width: 275px;
