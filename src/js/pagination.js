@@ -8,7 +8,7 @@ const generatePagination = (currentPage, totalCount) => {
 
   let pages = [];
   if (highestPage <= 8) {
-    pages = [1, 2, 3, 4, 5, 6, 7, 8];
+    pages = Array.from({ length: highestPage }, (_, i) => i + 1);
   } else if (currentPage > 3 && currentPage < highestPage - 2) {
     pages = [1];
     if (currentPage > 4) {
@@ -27,20 +27,11 @@ const generatePagination = (currentPage, totalCount) => {
     );
   } else if (currentPage >= highestPage - 2) {
     pages = [1];
-    if (currentPage > 4) {
+    if (highestPage > 8) {
       pages.push('...');
     }
-    if (currentPage != highestPage - 3) {
-      pages.push(currentPage - 2);
-    }
-    if (currentPage != highestPage - 2) {
-      pages.push(currentPage - 1);
-    }
-    if (currentPage <= highestPage && currentPage >= highestPage - 2) {
-      pages.push(currentPage);
-    }
-    if (currentPage != highestPage) {
-      pages.push(highestPage);
+    for (let i = highestPage - 4; i <= highestPage; i++) {
+      pages.push(i);
     }
   } else {
     pages = [1, 2, 3, 4, '...', highestPage];
