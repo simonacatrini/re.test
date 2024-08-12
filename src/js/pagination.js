@@ -30,13 +30,13 @@ const generatePagination = (currentPage, totalCount) => {
     if (currentPage > 4) {
       pages.push('...');
     }
-    if (currentPage != highestPage - 2) {
+    if (currentPage != highestPage - 3) {
       pages.push(currentPage - 2);
     }
-    if (currentPage != highestPage - 1) {
+    if (currentPage != highestPage - 2) {
       pages.push(currentPage - 1);
     }
-    if (currentPage != highestPage) {
+    if (currentPage <= highestPage && currentPage >= highestPage - 2) {
       pages.push(currentPage);
     }
     if (currentPage != highestPage) {
@@ -57,5 +57,4 @@ const generatePagination = (currentPage, totalCount) => {
 };
 
 export { generatePagination };
-
 
