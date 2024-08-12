@@ -7,13 +7,13 @@ const generatePagination = (currentPage, totalCount) => {
   const highestPage = Math.min(maxPages, PAGES_UPPER_LIMIT);
 
   let pages = [];
+
   if (highestPage <= 8) {
+    // Dacă numărul maxim de pagini este 8 sau mai puțin, afișează toate paginile.
     pages = Array.from({ length: highestPage }, (_, i) => i + 1);
-  } else if (currentPage > 3 && currentPage < highestPage - 3) {
-    pages = [1];
-    if (currentPage > 4) {
-      pages.push('...');
-    }
+  } else if (currentPage > 4 && currentPage < highestPage - 3) {
+    // Dacă pagina curentă este la mijloc, afișează paginile în jurul acesteia.
+    pages = [1, '...'];
     pages.push(
       currentPage - 2,
       currentPage - 1,
@@ -21,20 +21,16 @@ const generatePagination = (currentPage, totalCount) => {
       currentPage + 1,
       currentPage + 2
     );
-    if (currentPage < highestPage - 3) {
-      pages.push('...');
-    }
-    pages.push(highestPage);
+    pages.push('...', highestPage);
   } else if (currentPage >= highestPage - 3) {
-    pages = [1];
-    if (highestPage > 8) {
-      pages.push('...');
-    }
-    for (let i = highestPage - 5; i <= highestPage; i++) {
+    // Dacă pagina curentă este aproape de ultima pagină, afișează ultimele pagini.
+    pages = [1, '...'];
+    for (let i = highestPage - 4; i <= highestPage; i++) {
       pages.push(i);
     }
   } else {
-    pages = [1, 2, 3, 4, '...', highestPage];
+    // Dacă pagina curentă este aproape de început, afișează primele pagini.
+    pages = [1, 2, 3, 4, 5, '...', highestPage];
   }
 
   let markup = '';
