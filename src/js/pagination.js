@@ -1,4 +1,3 @@
-// import { processEventData} from '../js/searchbar'
 import { HITSPERPAGE, PAGES_UPPER_LIMIT } from '../js/discoveryapi';
 
 const pagesContainer = document.querySelector('.pages');
@@ -8,9 +7,9 @@ const generatePagination = (currentPage, totalCount) => {
   const highestPage = Math.min(maxPages, PAGES_UPPER_LIMIT);
 
   let pages = [];
- if (highestPage <= 8) {
+  if (highestPage <= 8) {
     pages = [1, 2, 3, 4, 5, 6, 7, 8];
- } else if (currentPage > 3 && currentPage < highestPage - 2) {
+  } else if (currentPage > 3 && currentPage < highestPage - 2) {
     pages = [1];
     if (currentPage > 4) {
       pages.push('...');
@@ -20,8 +19,8 @@ const generatePagination = (currentPage, totalCount) => {
         currentPage - 2,
         currentPage - 1,
         currentPage,
-        currentPage * 1 + 1,
-        currentPage * 1 + 2,
+        currentPage + 1,
+        currentPage + 2,
         '...',
         highestPage,
       ]
@@ -31,9 +30,14 @@ const generatePagination = (currentPage, totalCount) => {
     if (currentPage > 4) {
       pages.push('...');
     }
-    pages.push(...[currentPage - 2, currentPage - 1, currentPage]);
-    if (currentPage != highestPage - 1 ) {
-      pages.push(highestPage-1);
+    if (currentPage != highestPage - 2) {
+      pages.push(currentPage - 2);
+    }
+    if (currentPage != highestPage - 1) {
+      pages.push(currentPage - 1);
+    }
+    if (currentPage != highestPage) {
+      pages.push(currentPage);
     }
     if (currentPage != highestPage) {
       pages.push(highestPage);
@@ -48,8 +52,9 @@ const generatePagination = (currentPage, totalCount) => {
       pages[i] == currentPage ? 'active' : ''
     }">${pages[i]}</li>`;
   }
-  //   console.log(markup);
+
   pagesContainer.innerHTML = markup;
 };
 
 export { generatePagination };
+
