@@ -1,3 +1,4 @@
+// import { processEventData} from '../js/searchbar'
 import { HITSPERPAGE, PAGES_UPPER_LIMIT } from '../js/discoveryapi';
 
 const pagesContainer = document.querySelector('.pages');
@@ -16,8 +17,8 @@ if (highestPage <= 8) { pages=[1, 2, 3, 4, 5, 6, 7, 8]; } else if (currentPage> 
     currentPage - 2,
     currentPage - 1,
     currentPage,
-    currentPage + 1,
-    currentPage + 2,
+    currentPage * 1 + 1,
+    currentPage * 1 + 2,
     '...',
     highestPage,
     ]
@@ -27,14 +28,9 @@ if (highestPage <= 8) { pages=[1, 2, 3, 4, 5, 6, 7, 8]; } else if (currentPage> 
     if (currentPage > 4) {
     pages.push('...');
     }
-    if (currentPage != highestPage - 2) {
-    pages.push(currentPage - 2);
-    }
-    if (currentPage != highestPage - 1) {
-    pages.push(currentPage - 1);
-    }
-    if (currentPage != highestPage) {
-    pages.push(currentPage);
+    pages.push(...[currentPage - 2, currentPage - 1, currentPage]);
+    if (currentPage != highestPage - 1 ) {
+    pages.push(highestPage-1);
     }
     if (currentPage != highestPage) {
     pages.push(highestPage);
@@ -48,7 +44,7 @@ if (highestPage <= 8) { pages=[1, 2, 3, 4, 5, 6, 7, 8]; } else if (currentPage> 
       pages[i] == currentPage ? 'active' : ''
     }">${pages[i]}</li>`;
       }
-
+      // console.log(markup);
       pagesContainer.innerHTML = markup;
       };
 
