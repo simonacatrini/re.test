@@ -1,4 +1,4 @@
- import { HITSPERPAGE, PAGES_UPPER_LIMIT } from '../js/discoveryapi';
+import { HITSPERPAGE, PAGES_UPPER_LIMIT } from '../js/discoveryapi';
 const pagesContainer = document.querySelector('.pages');
 const generatePagination = (currentPage, totalCount) => {
   const maxPages = Math.ceil(totalCount / HITSPERPAGE);
