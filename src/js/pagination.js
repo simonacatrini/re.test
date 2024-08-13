@@ -44,3 +44,15 @@ const generatePagination = (currentPage, totalCount) => {
   pagesContainer.innerHTML = markup;
 };
 export { generatePagination };
+
+
+
+
+
+
+
+
+
+
+
+
