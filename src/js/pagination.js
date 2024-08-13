@@ -9,11 +9,12 @@ const generatePagination = (currentPage, totalCount) => {
   let pages = [];
 
   if (highestPage <= 8) {
-    // Afișează toate paginile dacă sunt 8 sau mai puține
     pages = Array.from({ length: highestPage }, (_, i) => i + 1);
-  } else if (currentPage > 4 && currentPage < highestPage - 3) {
-    // Afișează paginile din mijloc
-    pages = [1, '...'];
+  } else if (currentPage > 3 && currentPage < highestPage - 3) {
+    pages = [1];
+    if (currentPage > 4) {
+      pages.push('...');
+    }
     pages.push(
       currentPage - 2,
       currentPage - 1,
@@ -21,29 +22,32 @@ const generatePagination = (currentPage, totalCount) => {
       currentPage + 1,
       currentPage + 2
     );
-    pages.push('...', highestPage);
+    if (currentPage + 3 < highestPage) {
+      pages.push('...');
+    }
+    pages.push(highestPage);
   } else if (currentPage >= highestPage - 3) {
-    // Afișează ultimele pagini fără să depășească pagina maximă
-    pages = [1, '...'];
+    pages = [1];
+    if (currentPage > 4) {
+      pages.push('...');
+    }
     for (let i = highestPage - 4; i <= highestPage; i++) {
       if (i > 1) {
         pages.push(i);
       }
     }
   } else {
-    // Afișează primele pagini și ultimele pagini
-    pages = [1, 2, 3, 4, 5, '...', highestPage];
+    pages = [1, 2, 3, 4, '...', highestPage];
   }
 
-  // Generarea markup-ului
   let markup = '';
   for (let i = 0; i < pages.length; i++) {
-    if (typeof pages[i] === 'number') {
-      markup += `<li data-page="${pages[i]}" class="page ${
-        pages[i] === currentPage ? 'active' : ''
-      }">${pages[i]}</li>`;
+    if (pages[i] === '...') {
+      markup += `<li class="page dots">...</li>`;
     } else {
-      markup += `<li class="page">${pages[i]}</li>`;
+      markup += `<li data-page="${pages[i]}" class="page ${
+        pages[i] == currentPage ? 'active' : ''
+      }">${pages[i]}</li>`;
     }
   }
 
